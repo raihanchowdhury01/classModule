@@ -41,6 +41,35 @@ const products = [
 const co = p => p.id;
 const product = products.map(co);
 console.log(product);
-*/
+
 //Class 32(5)No. Video 
-const numbers = [12, 5, 23, 45, 11, 18, 9, 55, 61, 1];
+const numbers = [13, 5, 23, 45, 11, 19, 9, 55, 61, 1];
+const bigNum = n => n%2 === 0;
+const bigNums = numbers.find(bigNum);
+console.log(bigNums);
+
+//Class 32(7)No. Video
+class Instructor {
+    name;
+    designation = 'Instructor';
+    team = "Web team";
+    location;
+    startSupportSession(time){
+        console.log(`Start the support session at ${time}`);
+    }
+    createQuiz(module){
+        console.log(`Please create quiz for module ${module}`);
+    }
+    constructor(nam, location, time){
+        this.name = nam;
+        this.location = location;
+    }
+}
+const amir = new Instructor('amir', 'mombai');
+const solaiman = new Instructor('solaiman', 'Dhaka');
+console.log(amir);
+amir.startSupportSession('9.00');
+console.log(solaiman);
+*/
+
+//Class 32(8)No. Video
