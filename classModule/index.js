@@ -26,7 +26,21 @@ const double = num => num * 2;
 const makeDouble = numbers.map(double);
 
 console.log(makeDouble);
-*/
+
 
 
 //class 32(4)No. Video
+const friends = ['Tom Hanks', 'Tom Cruise', 'Tom Brady', 'Tom Solaiman'];
+const firstLetters = friends.map(f => f[4]);
+console.log(firstLetters);
+
+const products = [
+    {id: 1, name: 'mobaile', price: 6000},
+    {id: 2, name: 'watch', price: 500}
+];
+const co = p => p.id;
+const product = products.map(co);
+console.log(product);
+*/
+//Class 32(5)No. Video 
+const numbers = [12, 5, 23, 45, 11, 18, 9, 55, 61, 1];
