@@ -109,4 +109,49 @@ class Car {
 }
 const bmw = new Car('bmw', 2022);
 bmw.run(100 + ' km / h' )
+
+
+//Class 33(2)No.Video
+const user = {id: 1, name: 'Gorib Amir', job: 'actor'};
+const stringify = JSON.stringify(user);
+//console.log(stringify);
+//console.log(user); 
+const shop = {
+    owner: 'Alia', 
+    address: {
+        street: 'kochukhet booty er goli',
+        city: 'ranbir',
+        country: 'BD'
+    },
+    products : ['laptop', 'mic', 'monitor', 'keyboard'],
+    revenue: 45000,
+    isOpen: true,
+    isNew: false
+};
+const shopJSON = JSON.stringify(shop);
+console.log(shopJSON);
+
+//Class 33(3)No. Video
+
+
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => console.log(response))
+    //   .then(json => console.log(json))
+console.log("hello bd");
+
+//Class 33(4) No. Video
+function loadData(){
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
+function loadUsers(){
+    fetch ('https://jsonplaceholder.typicode.com/users')
+    .then (res => res.json())
+    .then(data => displayUsers(data))
+}
+
+function displayUsers(data){
+    console.log(data);
+}
 */
