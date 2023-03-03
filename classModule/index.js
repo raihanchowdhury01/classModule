@@ -73,3 +73,40 @@ console.log(solaiman);
 */
 
 //Class 32(8)No. Video
+/*
+class Developer {
+    name;
+    designation = 'Instructor';
+    team = "Web team";
+    location;
+    tech;
+    startSupportSession(time){
+        console.log(`Start the support session at ${time}`);
+    }
+    createQuiz(module){
+        console.log(`Please create quiz for module ${module}`);
+    }
+    constructor(nam, location, tech){
+        this.name = nam;
+        this.location = location;
+        this.tech = tech;
+    }
+    provideFeedback(){
+        console.log(`${this.name} Thank you for your feedback`);
+    }
+}
+const h = new Developer ()
+
+//sumit class
+class Car {
+    constructor(name, year){
+        this.name = name;
+        this.y = year;
+    }
+    run(parameter){
+        console.log(this.name + ' is running ' + parameter);
+    }
+}
+const bmw = new Car('bmw', 2022);
+bmw.run(100 + ' km / h' )
+*/
