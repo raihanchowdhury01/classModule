@@ -1,157 +1,36 @@
-/*
-//class 32(2)No. video
-const users = [
-    {id: 1, name: 'abul', job: 'doctor'}
-
-]
-const user = {
-    count: 4000,
-    date: {
-        co: 200, 
-        dat:{
-            counte: 100,
-            da: [
-                {id: 1}, {id: 2}, {id:3}
-            ]
-        }
-    }
-}
-
-console.log(user.date.dat.da[1].id);
-console.log(users[0].name);
-
-//class 32(3)No.Video
-const numbers = [2, 8, 4, 6, 3];
-const double = num => num * 2;
-const makeDouble = numbers.map(double);
-
-console.log(makeDouble);
-
-
-
-//class 32(4)No. Video
-const friends = ['Tom Hanks', 'Tom Cruise', 'Tom Brady', 'Tom Solaiman'];
-const firstLetters = friends.map(f => f[4]);
-console.log(firstLetters);
-
-const products = [
-    {id: 1, name: 'mobaile', price: 6000},
-    {id: 2, name: 'watch', price: 500}
-];
-const co = p => p.id;
-const product = products.map(co);
-console.log(product);
-
-//Class 32(5)No. Video 
-const numbers = [13, 5, 23, 45, 11, 19, 9, 55, 61, 1];
-const bigNum = n => n%2 === 0;
-const bigNums = numbers.find(bigNum);
-console.log(bigNums);
-
-//Class 32(7)No. Video
-class Instructor {
-    name;
-    designation = 'Instructor';
-    team = "Web team";
-    location;
-    startSupportSession(time){
-        console.log(`Start the support session at ${time}`);
-    }
-    createQuiz(module){
-        console.log(`Please create quiz for module ${module}`);
-    }
-    constructor(nam, location, time){
-        this.name = nam;
-        this.location = location;
-    }
-}
-const amir = new Instructor('amir', 'mombai');
-const solaiman = new Instructor('solaiman', 'Dhaka');
-console.log(amir);
-amir.startSupportSession('9.00');
-console.log(solaiman);
-*/
-
-//Class 32(8)No. Video
-/*
-class Developer {
-    name;
-    designation = 'Instructor';
-    team = "Web team";
-    location;
-    tech;
-    startSupportSession(time){
-        console.log(`Start the support session at ${time}`);
-    }
-    createQuiz(module){
-        console.log(`Please create quiz for module ${module}`);
-    }
-    constructor(nam, location, tech){
-        this.name = nam;
-        this.location = location;
-        this.tech = tech;
-    }
-    provideFeedback(){
-        console.log(`${this.name} Thank you for your feedback`);
-    }
-}
-const h = new Developer ()
-
-//sumit class
-class Car {
-    constructor(name, year){
-        this.name = name;
-        this.y = year;
-    }
-    run(parameter){
-        console.log(this.name + ' is running ' + parameter);
-    }
-}
-const bmw = new Car('bmw', 2022);
-bmw.run(100 + ' km / h' )
-
-
-//Class 33(2)No.Video
-const user = {id: 1, name: 'Gorib Amir', job: 'actor'};
-const stringify = JSON.stringify(user);
-//console.log(stringify);
-//console.log(user); 
-const shop = {
-    owner: 'Alia', 
-    address: {
-        street: 'kochukhet booty er goli',
-        city: 'ranbir',
-        country: 'BD'
-    },
-    products : ['laptop', 'mic', 'monitor', 'keyboard'],
-    revenue: 45000,
-    isOpen: true,
-    isNew: false
-};
-const shopJSON = JSON.stringify(shop);
-console.log(shopJSON);
-
-//Class 33(3)No. Video
-
-
-      fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => console.log(response))
-    //   .then(json => console.log(json))
-console.log("hello bd");
-
-//Class 33(4) No. Video
-function loadData(){
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+// const API_KEY = `23eaeda35cea71e6fd2023512688724e`;
+// const apiKeyUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric';
+const API_KEY = `23eaeda35cea71e6fd2023512688724e`;
+const loadTemperature = city => {
+const apiKeyUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    fetch(apiKeyUrl)
     .then(res => res.json())
-    .then(data => console.log(data))
-}
-function loadUsers(){
-    fetch ('https://jsonplaceholder.typicode.com/users')
-    .then (res => res.json())
-    .then(data => displayUsers(data))
+    .then(data => displayTemperature(data))
+    
+};
+const displayTemperature = data =>{
+    // const temperature =document.getElementById('temperature');
+    // temperature.innerText = data.main.temp;
+    setInnerText('temperature', data.main.temp)
+    setInnerText('condition', data.weather[0].main)
+
+
+};
+
+const setInnerText = (id, text) =>{
+    const temperature =document.getElementById(id);
+    temperature.innerText = text;
 }
 
-function displayUsers(data){
-    console.log(data);
-}
-*/
+document.getElementById('btn-search').addEventListener('click', function(){
+    const searchField = document.getElementById('search-field');
+    const city = searchField.value;
+    document.getElementById('city').innerText = city;
+    loadTemperature(city);
+})
+
+
+loadTemperature('dhaka');
+
+
+
